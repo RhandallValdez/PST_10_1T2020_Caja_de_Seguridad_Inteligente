@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QRGeneral"></activity>
+        <activity android:name=".OpcionesIniciales"></activity>
+        <activity android:name=".QRGeneral" />
         <activity android:name=".Registro" />
         <activity
             android:name=".SplashInicial"
