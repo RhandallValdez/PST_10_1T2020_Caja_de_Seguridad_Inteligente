@@ -24,37 +24,9 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
         try {
             String usuarioIngresado = datos[0][2];
             String contraIngresada = datos[0][3];
-            URL url = new URL(login_url);
-            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-            httpURLConnection.setRequestMethod("POST");
-            httpURLConnection.setDoInput(true);
-            httpURLConnection.setDoOutput(true);
-
-            OutputStream outputStream = httpURLConnection.getOutputStream();
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-            String post_data = URLEncoder.encode("usuarioIngresado", "UTF-8")+"="+URLEncoder.encode(usuarioIngresado, "UTF-8")+"&"+URLEncoder.encode("contraIngresada", "UTF-8")+"="+URLEncoder.encode(contraIngresada, "UTF-8");
-            bufferedWriter.write(post_data);
-            bufferedWriter.flush();
-            bufferedWriter.close();
-            outputStream.close();
-
-
-            InputStream iStr = httpURLConnection.getInputStream();
-            BufferedReader bR = new BufferedReader(new InputStreamReader(iStr,"UTF-8"));
-            String resultado="";
-            String line="";
-
-            while((line = bR.readLine()) != null){
-                resultado += line + System.getProperty("line.separator") ;
-            }
-            bR.close();
-            iStr.close();
-            httpURLConnection.disconnect();
-
-            totalResultadoSQL = new String[]{
-                    resultado
-            };
-
+            String SQL = usuarioIngresado+","+contraIngresada;
+            HttpURLConnection conexion = outputInformacion(SQL,login_url);
+            totalResultadoSQL = inputInformacion(conexion);
         } catch (MalformedURLException e ) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -69,45 +41,58 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
             String correo = datos[0][5];
             String contrasena = datos[0][6];
             String SQL = usuario+","+nombres + "," + apellidos + "," + correo +","+ contrasena;
-            System.out.println(SQL);
-            URL url = new URL(login_url);
-            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-            httpURLConnection.setRequestMethod("POST");
-            httpURLConnection.setDoOutput(true);
-            httpURLConnection.setDoInput(true);
-
-            OutputStream outputStream = httpURLConnection.getOutputStream();
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-            String tablaPost = URLEncoder.encode("SQL", "UTF-8") + "=" + URLEncoder.encode(SQL, "UTF-8");
-            bufferedWriter.write(tablaPost);
-            bufferedWriter.flush();
-            bufferedWriter.close();
-            outputStream.close();
-
-            InputStream iStr = httpURLConnection.getInputStream();
-            BufferedReader bR = new BufferedReader(new InputStreamReader(iStr, "UTF-8"));
-            String resultado = "";
-            String line = "";
-
-            while ((line = bR.readLine()) != null) {
-                resultado += line + System.getProperty("line.separator");
+            HttpURLConnection conexion = outputInformacion(SQL,login_url);
+            totalResultadoSQL = inputInformacion(conexion);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            bR.close();
-            iStr.close();
-            httpURLConnection.disconnect();
-
-            totalResultadoSQL = new String[]{
-                    resultado
-            };
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-    }
+        else if(type.equals("verificarAdmin")){
+            try {
+                String nombreUsuario = datos[0][2];
+                HttpURLConnection conexion = outputInformacion(nombreUsuario,login_url);
+                totalResultadoSQL = inputInformacion(conexion);
+            } catch (MalformedURLException e ) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+       //else if(type.equals())
 
         return totalResultadoSQL;
+    }
+    public HttpURLConnection outputInformacion(String SQL,String login_url) throws IOException{
+        URL url = new URL(login_url);
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setDoInput(true);
 
-}
+        OutputStream outputStream = httpURLConnection.getOutputStream();
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+        String tablaPost = URLEncoder.encode("SQL", "UTF-8") + "=" + URLEncoder.encode(SQL, "UTF-8");
+        bufferedWriter.write(tablaPost);
+        bufferedWriter.flush();
+        bufferedWriter.close();
+        outputStream.close();
+        return httpURLConnection;
+    }
+    public String[] inputInformacion(HttpURLConnection httpURLConnection) throws IOException{
+        InputStream iStr = httpURLConnection.getInputStream();
+        BufferedReader bR = new BufferedReader(new InputStreamReader(iStr,"UTF-8"));
+        String resultado="";
+        String line="";
+
+        while((line = bR.readLine()) != null){
+            resultado += line + System.getProperty("line.separator") ;
+        }
+        bR.close();
+        iStr.close();
+        httpURLConnection.disconnect();
+
+        return  new String[]{resultado};
+    }
 }

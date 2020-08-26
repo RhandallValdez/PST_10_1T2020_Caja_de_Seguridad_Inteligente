@@ -2,9 +2,11 @@ package com.example.thebox;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Registro extends AppCompatActivity {
     private EditText edNombre,edApellido,edCorreo,edUsuario,edContraseña;
+    private Button botonRegistrarse;
     private String register = "https://lab6-chiquito.000webhostapp.com/registro.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,9 @@ public class Registro extends AppCompatActivity {
         edCorreo = findViewById(R.id.correo);
         edUsuario = findViewById(R.id.usuario);
         edContraseña = findViewById(R.id.contrasena);
+        botonRegistrarse = findViewById(R.id.botonRegistrarse);
+        GradientDrawable drawableIngresar = (GradientDrawable) botonRegistrarse.getBackground();
+        drawableIngresar.setColor(Color.parseColor("#B388FF"));
     }
     public void registrarse(View v) {
         String[] resultado;
@@ -52,14 +58,16 @@ public class Registro extends AppCompatActivity {
             ArrayList<String> infoImp = new ArrayList<>(Arrays.asList(myData));
             if (infoImp.get(0).equals("denegado")){
                 Toast.makeText(Registro.this, "Usuario ya se encuentra registrado.", Toast.LENGTH_SHORT).show();
-                return;
+            } else{
+                Toast.makeText(Registro.this, "Usuario registrado exitosamente.", Toast.LENGTH_SHORT).show();
             }
-            finish();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+    public void regresar(View v){
         finish();
     }
 

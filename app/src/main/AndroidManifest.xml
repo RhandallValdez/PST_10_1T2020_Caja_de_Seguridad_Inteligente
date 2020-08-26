@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OpcionesIniciales"></activity>
+        <activity android:name=".registroCaja"></activity>
+        <activity android:name=".OpcionesIniciales" />
         <activity android:name=".QRGeneral" />
         <activity android:name=".Registro" />
         <activity

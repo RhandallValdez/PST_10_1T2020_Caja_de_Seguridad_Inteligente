@@ -174,11 +174,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/containedButton"
+        android:id="@+id/botonRegistrarse"
         android:layout_width="197dp"
         android:layout_height="51dp"
         android:layout_marginBottom="8dp"
-        android:background="#99B388FF"
+        android:background="@drawable/button_border"
         android:fontFamily="@font/changa_one"
         android:onClick="registrarse"
         android:text="Registrarse"
@@ -188,6 +188,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="102dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:onClick="regresar"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flecha" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

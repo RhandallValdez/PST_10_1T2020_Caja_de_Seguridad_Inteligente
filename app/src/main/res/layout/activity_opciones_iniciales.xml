@@ -28,12 +28,13 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/administrar"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginTop="104dp"
-        android:text="Manejar Cajas"
-        android:background="@android:color/transparent"
+        android:background="@drawable/button_border"
+        android:onClick="accederCaja"
+        android:text="Administrar Caja"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,18 +42,34 @@
         app:layout_constraintTop_toBottomOf="@+id/mostrarNombreUsuario" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/registrarCaja"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginTop="68dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/button_border"
+        android:onClick="registrarCaja"
         android:text="Registrar Caja"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/administrar" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="101dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:onClick="regresar"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flecha" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
