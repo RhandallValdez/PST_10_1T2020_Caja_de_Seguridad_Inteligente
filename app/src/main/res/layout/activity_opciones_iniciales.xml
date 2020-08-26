@@ -33,8 +33,9 @@
         android:id="@+id/administrar"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/button_border"
+        android:fontFamily="@font/changa_one"
         android:onClick="accederCaja"
         android:text="Administrar Caja"
         android:textColor="#FFFFFF"
@@ -47,8 +48,9 @@
         android:id="@+id/registrarCaja"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/button_border"
+        android:fontFamily="@font/changa_one"
         android:onClick="registrarCaja"
         android:text="Registrar Caja"
         android:textColor="#FFFFFF"
@@ -57,6 +59,22 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/administrar" />
+
+    <Button
+        android:id="@+id/escanearQR"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_border"
+        android:fontFamily="@font/changa_one"
+        android:onClick="leerQR"
+        android:text="Escanear QR"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarCaja" />
 
     <ImageButton
         android:id="@+id/imageButton"

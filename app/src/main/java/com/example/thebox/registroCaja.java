@@ -31,4 +31,7 @@ public class registroCaja extends AppCompatActivity {
     public void regresar(View v){
         finish();
     }
+    public void leerQR(View v){
+
+    }
 }

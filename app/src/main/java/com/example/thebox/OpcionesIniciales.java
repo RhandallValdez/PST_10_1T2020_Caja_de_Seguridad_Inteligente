@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 public class OpcionesIniciales extends AppCompatActivity {
     private TextView mostrarSaludo;
-    private View manejoCaja,registroCaja;
+    private View manejoCaja,registroCaja,escanear;
     private String verificacionAdmin = "https://lab6-chiquito.000webhostapp.com/verificacionAdmin.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,13 @@ public class OpcionesIniciales extends AppCompatActivity {
         mostrarSaludo.setText(saludo);
         manejoCaja = findViewById(R.id.administrar);
         registroCaja = findViewById(R.id.registrarCaja);
+        escanear = findViewById(R.id.escanearQR);
         GradientDrawable drawableManejo = (GradientDrawable) manejoCaja.getBackground();
         drawableManejo.setColor(Color.TRANSPARENT);
         GradientDrawable drawableRegistro = (GradientDrawable) registroCaja.getBackground();
         drawableRegistro.setColor(Color.TRANSPARENT);
+        GradientDrawable drawableEscanear = (GradientDrawable) escanear.getBackground();
+        drawableEscanear.setColor(Color.TRANSPARENT);
     }
     public void regresar(View v){
         finish();
@@ -63,5 +66,8 @@ public class OpcionesIniciales extends AppCompatActivity {
     public void accederCaja(View v){
         Intent intent=new Intent(this,QRGeneral.class);
         startActivity(intent);
+    }
+    public void leerQR(View v){
+
     }
 }
