@@ -3,6 +3,9 @@
     package="com.example.thebox">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.hardware.camera.autofocus"/>
 
     <application
         android:allowBackup="true"
@@ -14,7 +17,6 @@
         <activity android:name=".registroCaja"></activity>
         <activity android:name=".OpcionesIniciales" />
         <activity android:name=".LectorQR"></activity>
-        <activity android:name=".OpcionesIniciales" />
         <activity android:name=".QRGeneral" />
         <activity android:name=".Registro" />
         <activity
