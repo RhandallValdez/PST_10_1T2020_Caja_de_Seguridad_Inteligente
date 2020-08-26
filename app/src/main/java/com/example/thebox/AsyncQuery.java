@@ -60,8 +60,21 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
                 e.printStackTrace();
             }
         }
-       //else if(type.equals())
+        else if(type.equals("verificarQR")){
 
+            try {
+                String usuario = datos[0][2];
+                String infoQR = datos[0][3];
+
+                String SQL = usuario+","+infoQR ;
+                HttpURLConnection conexion = outputInformacion(SQL,login_url);
+                totalResultadoSQL = inputInformacion(conexion);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         return totalResultadoSQL;
     }
     public HttpURLConnection outputInformacion(String SQL,String login_url) throws IOException{
