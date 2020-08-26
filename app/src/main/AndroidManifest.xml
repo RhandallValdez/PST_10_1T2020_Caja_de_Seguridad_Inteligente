@@ -13,6 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".registroCaja"></activity>
         <activity android:name=".OpcionesIniciales" />
+        <activity android:name=".LectorQR"></activity>
+        <activity android:name=".OpcionesIniciales" />
         <activity android:name=".QRGeneral" />
         <activity android:name=".Registro" />
         <activity
@@ -25,6 +27,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Inicio" />
+        <activity android:name=".CaptureAct"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
