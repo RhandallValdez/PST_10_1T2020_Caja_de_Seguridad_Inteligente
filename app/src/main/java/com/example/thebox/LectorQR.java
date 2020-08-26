@@ -16,13 +16,13 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class LectorQR extends AppCompatActivity implements View.OnClickListener {
-    TextView mostrardata;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lector_q_r);
-        mostrardata=findViewById(R.id.textView9);
+
 
     }
     @Override
@@ -38,14 +38,13 @@ public class LectorQR extends AppCompatActivity implements View.OnClickListener 
         intergrator.setPrompt("Scanning Code");
         intergrator.initiateScan();
     }
-
-    protected void onActicityResult(int requestCode, int resultCode, Intent data){
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if (result != null){
             if (result.getContents() != null){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(result.getContents());
-                mostrardata.setText(result.getContents());
                 builder.setTitle("Resultado de Escaneado");
                 builder.setPositiveButton("Escanear de Nuevo", new DialogInterface.OnClickListener() {
                     @Override
