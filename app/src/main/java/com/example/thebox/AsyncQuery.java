@@ -25,7 +25,7 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
             String usuarioIngresado = datos[0][2];
             String contraIngresada = datos[0][3];
             URL url = new URL(login_url);
-            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoInput(true);
             httpURLConnection.setDoOutput(true);

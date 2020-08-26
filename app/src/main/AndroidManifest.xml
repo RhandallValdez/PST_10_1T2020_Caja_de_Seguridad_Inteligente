@@ -3,7 +3,9 @@
     package="com.example.thebox">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OpcionesIniciales"></activity>
+        <activity android:name=".LectorQR"></activity>
+        <activity android:name=".OpcionesIniciales" />
         <activity android:name=".QRGeneral" />
         <activity android:name=".Registro" />
         <activity
@@ -24,6 +27,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Inicio" />
+        <activity android:name=".CaptureAct"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
