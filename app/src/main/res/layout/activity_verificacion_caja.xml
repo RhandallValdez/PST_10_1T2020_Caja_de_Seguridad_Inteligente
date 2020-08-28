@@ -4,6 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificacionCaja">
+    tools:context=".VerificacionCaja"
+    android:background="@drawable/gradient_background2">
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="336dp"
+        android:layout_height="168dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thebox_solotexto" />
+
+    <TextView
+        android:id="@+id/detalleUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/changa_one"
+        android:text="Cajas a las que tiene acceso:"
+        android:textColor="#99B388FF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/changa_one"
+        android:text="Contraseña de Caja Seleccionada:"
+        android:textColor="#99B388FF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCajas" />
+
+    <EditText
+        android:id="@+id/contraVerificacionCaja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:fontFamily="@font/changa_one"
+        android:hint="*****"
+        android:inputType="textPersonName"
+        android:password="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textContra" />
+
+    <Button
+        android:id="@+id/botonVerificarCaja"
+        android:layout_width="197dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/button_border"
+        android:fontFamily="@font/changa_one"
+        android:onClick="administrarCaja"
+        android:text="Administrar caja"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/volverVerificarCaja" />
+
+    <ImageButton
+        android:id="@+id/volverVerificarCaja"
+        android:layout_width="102dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:onClick="regresar"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <Spinner
+        android:id="@+id/spinnerCajas"
+        android:layout_width="309dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detalleUbicacion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
