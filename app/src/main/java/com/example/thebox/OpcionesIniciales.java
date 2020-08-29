@@ -70,7 +70,7 @@ public class OpcionesIniciales extends AppCompatActivity {
         }
     }
     public void accederCaja(View v){
-        Intent intent=new Intent(this,QRGeneral.class);
+        Intent intent=new Intent(this,VerificacionCaja.class);
         startActivity(intent);
     }
     public void leerQR(View v){
