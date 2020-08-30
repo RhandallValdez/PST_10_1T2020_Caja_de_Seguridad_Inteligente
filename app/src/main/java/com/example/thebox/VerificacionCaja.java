@@ -59,7 +59,7 @@ public class VerificacionCaja extends AppCompatActivity {
                 String strInfoCaja = myData[i].replace(","," |");
                 String id = myData[i].split(",")[0];
                 listaIDCajas.add(id);
-                infoImp.add(strInfoCaja);//aqui debo ver que lo que trae el php se genere el id caja en usuario
+                infoImp.add(strInfoCaja);
             }
             return infoImp.toArray(new String[0]);
 
@@ -95,7 +95,7 @@ public class VerificacionCaja extends AppCompatActivity {
                 return;
             }
             UsuarioActual.setIdCajaActualenRevision(idCajaEscogidaSpinner);
-            Intent intent = new Intent(this, QRGeneral.class);
+            Intent intent = new Intent(this, ManejoCaja.class);
             startActivity(intent);
         }catch (ExecutionException e) {
             e.printStackTrace();

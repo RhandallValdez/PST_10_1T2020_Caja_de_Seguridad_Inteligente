@@ -100,6 +100,20 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals("manipularAccesos")){
+            try {
+                String usuario = datos[0][2];
+                String comando = datos[0][3];
+                String idCaja = datos[0][4];
+                String SQL = usuario+","+comando+","+idCaja;
+                HttpURLConnection conexion = outputInformacion(SQL,login_url);
+                totalResultadoSQL = inputInformacion(conexion);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         return totalResultadoSQL;
     }
     public HttpURLConnection outputInformacion(String SQL,String login_url) throws IOException{

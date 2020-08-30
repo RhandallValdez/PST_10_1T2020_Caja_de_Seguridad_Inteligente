@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PermisosFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/detalleOrden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/changa_one"
+            android:text="Escoja el comando a realizar:"
+            android:textColor="#99B388FF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerComando"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detalleOrden" />
+
+        <TextView
+            android:id="@+id/textUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/changa_one"
+            android:text="Usuario a modificar permiso:"
+            android:textColor="#99B388FF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerComando" />
+
+        <EditText
+            android:id="@+id/usuarioOrden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="45dp"
+            android:ems="10"
+            android:fontFamily="@font/changa_one"
+            android:hint="Ingrese usuario:"
+            android:inputType="textPersonName"
+            android:textColor="#80000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textUsuario" />
+
+        <Button
+            android:id="@+id/ejecutarOrden"
+            android:layout_width="197dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/changa_one"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usuarioOrden" />
+
+        <ImageButton
+            android:id="@+id/volverVerificarCaja"
+            android:layout_width="102dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:onClick="regresar"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usuarioOrden"
+            app:srcCompat="@drawable/flecha" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>
