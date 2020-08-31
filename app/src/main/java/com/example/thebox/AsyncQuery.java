@@ -114,6 +114,20 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals("llenarTablaAccesos")){
+            try {
+                String idCaja = datos[0][2];
+                String fechaInicio = datos[0][3];
+                String fechaFin = datos[0][4];
+                String SQL = idCaja+","+fechaInicio+","+fechaFin;
+                HttpURLConnection conexion = outputInformacion(SQL,login_url);
+                totalResultadoSQL = inputInformacion(conexion);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         return totalResultadoSQL;
     }
     public HttpURLConnection outputInformacion(String SQL,String login_url) throws IOException{

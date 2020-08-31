@@ -27,14 +27,19 @@
                 <Button
                     android:id="@+id/fechaInicio"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/changa_one"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
                     android:layout_height="wrap_content"
                     android:text="Fecha Inicio" />
 
                 <TextView
                     android:id="@+id/textViewInicio"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:fontFamily="@font/changa_one"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -46,14 +51,19 @@
                 <Button
                     android:id="@+id/fechaFin"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/changa_one"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
                     android:layout_height="wrap_content"
                     android:text="Fecha Fin" />
 
                 <TextView
                     android:id="@+id/textViewFin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:fontFamily="@font/changa_one"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
         </LinearLayout>
@@ -68,7 +78,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:orientation="vertical" >
+                <TableLayout
+                    android:id="@+id/tablaConsulta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center" />
+            </LinearLayout>
         </ScrollView>
 
         <Button
@@ -78,6 +95,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="26dp"
             android:background="@drawable/button_border"
+            android:text="Ver accesos"
             android:fontFamily="@font/changa_one"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -86,7 +104,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageButton
-            android:id="@+id/volverVerificarCaja"
+            android:id="@+id/volverVerificarCaja1"
             android:layout_width="102dp"
             android:layout_height="61dp"
             android:layout_marginStart="40dp"

@@ -1,6 +1,5 @@
 package com.example.thebox;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -64,6 +63,13 @@ public class PermisosFragment extends Fragment {
         ArrayAdapter<String> aa = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_dropdown_item,opciones);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerAccion.setAdapter(aa);
+        ImageButton regresar = view.findViewById(R.id.volverVerificarCaja);
+        regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
         Button botonComando = (Button) view.findViewById(R.id.ejecutarOrden);
         GradientDrawable drawableCaja = (GradientDrawable) botonComando.getBackground();
         drawableCaja.setColor(Color.parseColor("#B388FF"));
