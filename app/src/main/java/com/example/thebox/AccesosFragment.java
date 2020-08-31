@@ -146,7 +146,7 @@ public class AccesosFragment extends Fragment {
                     AsyncQuery async = new AsyncQuery();
                     resultado = async.execute(datos).get();
                     System.out.println(resultado[0]);
-                    if(resultado[0].equals("Tabla vacia")){
+                    if(resultado[0].equals("Tabla vacía")){
                         Toast.makeText(getActivity(), "Sin resultados.", Toast.LENGTH_SHORT).show();
                     }
                     String resultadoTabla = resultado[0].trim();

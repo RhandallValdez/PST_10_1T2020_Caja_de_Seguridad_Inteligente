@@ -60,7 +60,6 @@ public class Inicio extends AppCompatActivity {
             Intent intent=new Intent(this,OpcionesIniciales.class);
 
             startActivity(intent);
-            finish();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
