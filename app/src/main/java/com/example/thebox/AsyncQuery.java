@@ -87,6 +87,23 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals("registrarCaja")){
+            try {
+                String paisCaja = datos[0][2];
+                String ciudadCaja = datos[0][3];
+                String calleCaja = datos[0][4];
+                String detalleCaja = datos[0][5];
+                String contrasenaCaja = datos[0][6];
+                String infoQR = datos [0][7];
+                String SQL = paisCaja+","+ciudadCaja + "," + calleCaja + "," + detalleCaja +","+ contrasenaCaja + "," + infoQR;
+                HttpURLConnection conexion = outputInformacion(SQL,login_url);
+                totalResultadoSQL = inputInformacion(conexion);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         else if(type.equals("verificarCaja")){
             try {
                 String idCaja = datos[0][2];
