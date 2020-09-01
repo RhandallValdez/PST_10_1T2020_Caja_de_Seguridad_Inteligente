@@ -83,7 +83,8 @@ public class registroCaja extends AppCompatActivity {
                 calleCaja,
                 detalleCaja,
                 contrasenaCaja,
-                infoQR
+                infoQR,
+                userName
         };
         AsyncQuery async = new AsyncQuery();
         try {

@@ -95,7 +95,8 @@ public class AsyncQuery extends AsyncTask<String[],Void,String[]> {
                 String detalleCaja = datos[0][5];
                 String contrasenaCaja = datos[0][6];
                 String infoQR = datos [0][7];
-                String SQL = paisCaja+","+ciudadCaja + "," + calleCaja + "," + detalleCaja +","+ contrasenaCaja + "," + infoQR;
+                String userName = datos [0][8];
+                String SQL = paisCaja+","+ciudadCaja + "," + calleCaja + "," + detalleCaja +","+ contrasenaCaja + "," + infoQR + "," + userName;
                 HttpURLConnection conexion = outputInformacion(SQL,login_url);
                 totalResultadoSQL = inputInformacion(conexion);
             } catch (MalformedURLException e) {
